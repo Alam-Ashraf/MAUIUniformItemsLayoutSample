@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MAUIUniformItemsLayoutSample.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Margin" Value="0,10,0,0" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="15">
+
+            <Label Text="UniformItemsLayout with default settings" />
+            <toolkit:UniformItemsLayout x:Name="UniformItemsLayout_Default">
+                <Button BackgroundColor="#F5F5DC" Text="Button 1" />
+                <Button BackgroundColor="#FAEBD7" Text="Button 2" />
+                <Button BackgroundColor="#FFF0F5" Text="Button 3" />
+                <Button BackgroundColor="#FFE4E1" Text="Button 4" />
+            </toolkit:UniformItemsLayout>
+
+
+            <Label Text="UniformItemsLayout with MaxColumns=2 and MaxRows=2" />
+            <toolkit:UniformItemsLayout
+                x:Name="UniformItemsLayout_MaxRows2MaxColumns2"
+                MaxColumns="2"
+                MaxRows="2">
+                <Button BackgroundColor="#E6E6FA" Text="Button 1" />
+                <Button BackgroundColor="#D8BFD8" Text="Button 2" />
+                <Button BackgroundColor="#DDA0DD" Text="Button 3" />
+                <Button BackgroundColor="#EE82EE" Text="Button 4" />
+            </toolkit:UniformItemsLayout>
+
+            <Label Text="UniformItemsLayout with MaxRows=1" />
+            <toolkit:UniformItemsLayout x:Name="UniformItemsLayout_MaxRows1" MaxRows="1">
+                <Button BackgroundColor="#FFDEAD" Text="Button 1" />
+                <Button BackgroundColor="#D2B48C" Text="Button 2" />
+                <Button BackgroundColor="#F4A460" Text="Button 3" />
+                <Button BackgroundColor="#B8860B" Text="Button 4" />
+            </toolkit:UniformItemsLayout>
+
+            <Label Text="UniformItemsLayout with MaxColumns=1" />
+            <toolkit:UniformItemsLayout x:Name="UniformItemsLayout_MaxColumns1" MaxColumns="1">
+                <Button BackgroundColor="#D3D3D3" Text="Button 1" />
+                <Button BackgroundColor="#A9A9A9" Text="Button 2" />
+                <Button BackgroundColor="#808080" Text="Button 3" />
+                <Button BackgroundColor="#696969" Text="Button 4" />
+            </toolkit:UniformItemsLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
